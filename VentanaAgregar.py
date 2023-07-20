@@ -179,15 +179,15 @@ class VentanaAgregar(ttk.Frame):
                         ruta_inv+=p
                     else:
                         break
-                ruta=ruta_inv[::-1]
+                ruta=ruta_inv[::-1]   
                 self.imagen.save('media/'+ruta)
             else:
-                ruta='sin_imagen.jpg'  
-            if self.nombre.get()!='' and self.obtener_ing()!=[] and str(self.ent_preparacion.get('0.0','end'))!='\n' and self.tiempo_prep.get()!=0 and self.tiempo_coc.get() !=0:         
+                ruta='sin_imagen.jpg'    
+            if self.nombre.get()!='' and self.obtener_ing()!=[] and str(self.ent_preparacion.get('0.0','end'))!='' and self.tiempo_prep.get()!=0 and self.tiempo_coc.get() !=0:        
                 Receta(str(self.nombre.get()),self.obtener_ing(),str(self.ent_preparacion.get('0.0','end')),self.tiempo_prep.get(),self.tiempo_coc.get(),self.ent_etiqueta.get(),ruta,self.fav_boolean()).crear_receta()
                 messagebox.showinfo(message="Receta guardada con éxito!!!") 
             else:
                 messagebox.showerror(message="Debe completar los campos obligatorios para poder guardar")    
         except:
-            messagebox.showerror(message='Asegúrese de cargar bien todos los campos con sus datos correctos')
+            messagebox.showerror(message='Asegúrese de cargar bien todos los campos con sus datos correctos\nEs posible que haya un problema al agregar la receta')
                

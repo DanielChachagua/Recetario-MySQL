@@ -149,6 +149,7 @@ class App(ttk.Frame):
                     print(ruta_img)
                     if ruta_img != 'sin_imagen.jpg':
                         remove(f'media/{ruta_img}')
+                    print(fila)    
                     Receta.eliminar_receta(fila)
                     
         else:
@@ -257,7 +258,7 @@ class App(ttk.Frame):
                     self.tabla.insert("","end",image=self.img_red,values=(r['Nombre'],'Tiempo Preparación:\n'+str(r['Tiempo_preparacion'])+' Minutos','Tiempo de Cocción:\n'+str(r['Tiempo_coccion'])+' Minutos'))        
        
             
-if __name__=='__main__':
-    Inicio(tk.Tk()).mainloop()      
-    App(tk.Tk()).mainloop()
+# if __name__=='__main__':
+#     Inicio(tk.Tk()).mainloop()      
+#     App(tk.Tk()).mainloop()
             
